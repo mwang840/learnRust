@@ -1,0 +1,15 @@
+/target
+*.o
+*.d
+*.exe
+*.json
+*.bin
+*.lock
+*.timestamp
+dep-bin-guessing_game
+.cargo-lock
+bin-guessing_game
+test-bin-guessing_game
+libguessing_game*
+dep-test-bin-guessing_game
+CACHEDIR.TAG
