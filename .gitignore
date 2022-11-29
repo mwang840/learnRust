@@ -13,3 +13,6 @@ test-bin-guessing_game
 libguessing_game*
 dep-test-bin-guessing_game
 CACHEDIR.TAG
+# Generated
+pkg/
+target/
