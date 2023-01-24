@@ -34,7 +34,29 @@ fn main() {
     let two: f64 = tup.1; 
     let three: u8 = tup.2;
     println!("Another way of doing it {one}, {two}, {three}");
+   //Looks like we set a variable, outside, have a variable in the inside and increment it by one thus giving it 4.
+    let y =  {
+        let x = 3;
+        x + 1
+    };
+    println!("The value of y is: {y}");
+    
+    let num = 10;
 
+    if num % 3 == 0 {
+        println!("Divisible by 3");
+    }else if num % 4 == 0{
+        println!("Remainder of 4");
+    }else if num % 5 == 0{
+        println!("Divisible by 5");
+    }else{
+        println!("Neither divisible by 3, 4 or 5");
+    }
+    //Ifs in a let statement
+    let condition = true;
+    let outcome = if condition {1} else {0};
+    println!("The outcome is: {outcome}");
+    println!("{}", looping());
 }
 
 fn sum(x: i32, y: i32) -> i32 {
@@ -55,4 +77,16 @@ fn divide(x: f32, y:f32) -> f32 {
 
 fn modulus(x: i32, y:i32) -> i32 {
     return x % y;
+}
+
+fn looping()->i32{
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 3;
+        }
+    };
+    return result;
 }
