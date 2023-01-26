@@ -57,6 +57,36 @@ fn main() {
     let outcome = if condition {1} else {0};
     println!("The outcome is: {outcome}");
     println!("{}", looping());
+    //Weird looping (nested?)
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+
+        count += 1;
+    }
+    println!("End count = {count}");
+    //While Looping
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}");
+
+        number -= 1;
+    }
+
+    println!("Game Over Son!!");
 }
 
 fn sum(x: i32, y: i32) -> i32 {
