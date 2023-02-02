@@ -18,7 +18,20 @@ fn main() {
     let string2 = String::from("Give Back");
     let string3 = take_n_give_back(string1);
     let string4 = take_n_give_back(string2);
+    println!("{}", find_str_length(&string3));
+    println!("{}", find_str_length(&string4));
+   
+
 }
+
+//Updates the word with a mutuable reference
+fn update(word: &mut String){
+    word.push_str(" updated!");
+}
+
+fn find_str_length(s: &String)->usize {
+    return s.len();
+}   
 
 
 fn takes_ownership(some_string: String) { // some_string comes into scope
