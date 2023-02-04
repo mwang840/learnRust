@@ -21,7 +21,23 @@ fn main() {
     println!("{}", find_str_length(&string3));
     println!("{}", find_str_length(&string4));
    
+    //Referencing the scope the right way
+    let mut name = String::from("Kabut");
+    {
+        //since name1 goes out of scope, we can make a reference without any problems
+        let name1 = &mut name;
+        println!("{}", name1);
+    }
+    let name2 = &mut name;
+    println!("{}",  name2);
+    println!("{}", notDangle());
 
+}
+
+//Dangling References
+fn notDangle()-> String {
+    let s = String::from("Not Dangling");
+    return s;
 }
 
 //Updates the word with a mutuable reference
