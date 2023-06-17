@@ -1,4 +1,5 @@
-pub struct Student {
+#[derive(Debug)]
+struct Student {
     firstname: String,
     lastname: String,
     age: u64,
@@ -7,6 +8,10 @@ pub struct Student {
     city: String,
     state: String,
     email: String,
+}
+
+struct Square {
+    side: u32
 }
 
 fn main() {
@@ -20,6 +25,14 @@ fn main() {
         state: String::from("Delaware"),
         email: String::from("cbcollege@udel.edu")
     };
+    let threebythree = Square {
+        side: 3
+    };
     println!("{}", chris.firstname);
+    println!("Area of a 3 X 3 square is {}", area(&threebythree));
     
+}
+
+fn area(square: &Square)->u32{
+    square.side * square.side
 }
